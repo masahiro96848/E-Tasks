@@ -1,15 +1,13 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes React and other helpers. It's a great starting point while
- * building robust, powerful web applications using React + Laravel.
- */
-
-require('./bootstrap');
-
-/**
- * Next, we will create a fresh React component instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-require('./components/Example');
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const TodoList_1 = __importDefault(require("./components/TodoList"));
+const App = () => {
+    return react_1.default.createElement("div", { className: 'app' },
+        react_1.default.createElement("div", null, "\u3042\u3042\u3042\u3042\u3042\u3042"),
+        react_1.default.createElement(TodoList_1.default, null));
+};
+exports.default = App;
