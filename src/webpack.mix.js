@@ -48,7 +48,7 @@ const path = require("path");
  |
  */
 
-mix.js('resources/js/App.tsx', 'public/js')
+mix.ts('resources/js/App.tsx', 'public/js')
     .react()
     .sass('resources/sass/app.scss', 'public/css');
 
