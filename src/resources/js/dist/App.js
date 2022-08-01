@@ -4,8 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
-const TodoList = () => {
-    const todos = [{ id: 't1', text: 'テスト' }];
-    return (react_1.default.createElement("ul", null, todos.map(todo => (react_1.default.createElement("li", { key: todo.id }, todo.text)))));
+const App = () => {
+    return react_1.default.createElement("div", { className: 'app' },
+        react_1.default.createElement("div", null, "\u3042\u3042\u3042\u3042\u3042\u3042"));
 };
-exports.default = TodoList;
+exports.default = App;
+//# sourceMappingURL=App.js.map
