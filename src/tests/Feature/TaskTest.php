@@ -47,8 +47,7 @@ class TaskTest extends TestCase
         $task = Task::factory()->create();
 
         $task->title = '書き換え';
-        
-        
+
         $response = $this->patchJson("api/tasks/{$task->id}", $task->toArray());
 
         $response
@@ -59,18 +58,29 @@ class TaskTest extends TestCase
     /**
      * @test
      */
-    public function 削除することができる()
+    // public function 削除することができる()
+    // {
+    //     $tasks = Task::factory()->count(10)->create();
+
+    //     // $response = $this->deleteJson("api/tasks/1");
+    //     // $response->assertOk();
+
+    //     $response = $this->getJson("api/tasks");
+    //     $response->assertJsonCount($tasks->count() -1);
+    // }
+
+    public function タイトルが空の場合は登録できない()
     {
-        $tasks = Task::factory()->count(10)->create();
+        $data = [
+            'title' => ''
+        ];
 
-        $response = $this->deleteJson("api/tasks/1");
-        $response->assertOk();
+        $response = $this->postJson("api/tasks", $data);
 
-        $response = $this->getJson("api/tasks");
-        $response->assertJsonCount($tasks->count() -1);
-
-        // $response
-        //     ->assertOk()
-        //     ->assertJsonFragment($task->toArray());
+        $response
+            ->assertStatus(422)
+            ->assertJsonValidationErrorFor(
+                ['title' => 'タイトルは、必ず指定してください']
+            );
     }
 }
