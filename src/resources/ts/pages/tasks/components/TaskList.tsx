@@ -1,36 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useQuery } from 'react-query';
+import React from  'react'
+import { useTasks } from '../../../queries/TaskQuery';
 
-type Task = {
-    id: number
-    title: string
-    is_done: boolean
-    created_at: Date
-    updated_at: Date
-}
-
-
-const TaskPage: React.FC = () => {
-
-    /*
-    const [tasks, setTasks] = useState<Task[]>([])
-
-    const getTasks = async () => {
-        const { data } = await axios.get<Task[]>('api/tasks')
-        console.log(data)
-        setTasks(data)
-    }
-
-    useEffect(() => {
-        getTasks()
-    })
-    */
-
-    const { data:tasks, status } = useQuery('tasks', async () => {
-        const { data } = await axios.get<Task[]>('api/tasks')
-        return data
-    })
+const TaskList: React.FC = () => {
+    const { data:tasks, status } = useTasks()
 
     if (status === 'loading') {
         return <div className='loader' />
@@ -41,13 +13,6 @@ const TaskPage: React.FC = () => {
     }
 
     return (
-        <>
-        <form className="input-form">
-            <div className="inner">
-                <input type="text" className="input" placeholder="TODOを入力してください。" defaultValue="" />
-                <button className="btn is-primary">追加</button>
-            </div>
-        </form>
         <div className="inner">
             <ul className="task-list">
                 { tasks.map(task => (
@@ -89,8 +54,7 @@ const TaskPage: React.FC = () => {
                 </li>
             </ul>
         </div>
-    </>
     )
 }
 
-export default TaskPage
+export default TaskList

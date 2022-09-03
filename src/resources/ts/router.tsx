@@ -5,7 +5,7 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import TaskPage from './pages/tasks'
+import TaskPage from './pages/tasks/components'
 import LoginPage from './pages/login'
 import HelpPage from './pages/help'
 
@@ -33,18 +33,6 @@ const Router = () => {
         </Switch>
     </BrowserRouter>
     );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
 
 
