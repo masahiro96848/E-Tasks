@@ -61,6 +61,87 @@ react_dom_1["default"].render(react_1["default"].createElement(react_1["default"
 
 /***/ }),
 
+/***/ "./resources/ts/pages/help/index.tsx":
+/*!*******************************************!*\
+  !*** ./resources/ts/pages/help/index.tsx ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var HelpPage = function HelpPage() {
+  return react_1["default"].createElement("div", {
+    className: 'align-center'
+  }, react_1["default"].createElement("h1", null, "\u30D8\u30EB\u30D7"), react_1["default"].createElement("p", null, "\u4F7F\u3044\u65B9\u3092\u89E3\u8AAC\u3057\u307E\u3059\u3002 ", react_1["default"].createElement("br", null), "\u3053\u306E\u30B5\u30A4\u30C8\u306F\u30ED\u30B0\u30A4\u30F3\u304C\u5FC5\u8981\u3067\u3059\u3002"));
+};
+
+exports["default"] = HelpPage;
+
+/***/ }),
+
+/***/ "./resources/ts/pages/login/index.tsx":
+/*!********************************************!*\
+  !*** ./resources/ts/pages/login/index.tsx ***!
+  \********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var LoginPage = function LoginPage() {
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("div", {
+    className: "login-page"
+  }, react_1["default"].createElement("div", {
+    className: "login-panel"
+  }, react_1["default"].createElement("form", null, react_1["default"].createElement("div", {
+    className: "input-group"
+  }, react_1["default"].createElement("label", null, "\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9"), react_1["default"].createElement("input", {
+    type: "email",
+    className: "input"
+  })), react_1["default"].createElement("div", {
+    className: "input-group"
+  }, react_1["default"].createElement("label", null, "\u30D1\u30B9\u30EF\u30FC\u30C9"), react_1["default"].createElement("input", {
+    type: "password",
+    className: "input"
+  })), react_1["default"].createElement("button", {
+    type: "submit",
+    className: "btn"
+  }, "\u30ED\u30B0\u30A4\u30F3"))), react_1["default"].createElement("div", {
+    className: "links"
+  }, react_1["default"].createElement("a", {
+    href: "#"
+  }, "\u30D8\u30EB\u30D7"))));
+};
+
+exports["default"] = LoginPage;
+
+/***/ }),
+
 /***/ "./resources/ts/pages/tasks/index.tsx":
 /*!********************************************!*\
   !*** ./resources/ts/pages/tasks/index.tsx ***!
@@ -83,7 +164,63 @@ Object.defineProperty(exports, "__esModule", ({
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 var TaskPage = function TaskPage() {
-  return react_1["default"].createElement("h1", null, "Task Page");
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("form", {
+    className: "input-form"
+  }, react_1["default"].createElement("div", {
+    className: "inner"
+  }, react_1["default"].createElement("input", {
+    type: "text",
+    className: "input",
+    placeholder: "TODO\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044\u3002",
+    value: ""
+  }), react_1["default"].createElement("button", {
+    className: "btn is-primary"
+  }, "\u8FFD\u52A0"))), react_1["default"].createElement("div", {
+    className: "inner"
+  }, react_1["default"].createElement("ul", {
+    className: "task-list"
+  }, react_1["default"].createElement("li", null, react_1["default"].createElement("label", {
+    className: "checkbox-label"
+  }, react_1["default"].createElement("input", {
+    type: "checkbox",
+    className: "checkbox-input"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement("span", null, "\u65B0\u3057\u3044TODO")), react_1["default"].createElement("button", {
+    className: "btn is-delete"
+  }, "\u524A\u9664")), react_1["default"].createElement("li", null, react_1["default"].createElement("label", {
+    className: "checkbox-label"
+  }, react_1["default"].createElement("input", {
+    type: "checkbox",
+    className: "checkbox-input"
+  })), react_1["default"].createElement("form", null, react_1["default"].createElement("input", {
+    type: "text",
+    className: "input",
+    value: "\u7DE8\u96C6\u4E2D\u306ETODO"
+  })), react_1["default"].createElement("button", {
+    className: "btn"
+  }, "\u66F4\u65B0")), react_1["default"].createElement("li", {
+    className: "done"
+  }, react_1["default"].createElement("label", {
+    className: "checkbox-label"
+  }, react_1["default"].createElement("input", {
+    type: "checkbox",
+    className: "checkbox-input"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement("span", null, "\u5B9F\u884C\u3057\u305FTODO")), react_1["default"].createElement("button", {
+    className: "btn is-delete"
+  }, "\u524A\u9664")), react_1["default"].createElement("li", null, react_1["default"].createElement("label", {
+    className: "checkbox-label"
+  }, react_1["default"].createElement("input", {
+    type: "checkbox",
+    className: "checkbox-input"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement("span", null, "\u30B4\u30DF\u6368\u3066")), react_1["default"].createElement("button", {
+    className: "btn is-delete"
+  }, "\u524A\u9664")), react_1["default"].createElement("li", null, react_1["default"].createElement("label", {
+    className: "checkbox-label"
+  }, react_1["default"].createElement("input", {
+    type: "checkbox",
+    className: "checkbox-input"
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement("span", null, "\u6383\u9664")), react_1["default"].createElement("button", {
+    className: "btn is-delete"
+  }, "\u524A\u9664")))));
 };
 
 exports["default"] = TaskPage;
@@ -115,20 +252,26 @@ var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_mod
 
 var tasks_1 = __importDefault(__webpack_require__(/*! ./pages/tasks */ "./resources/ts/pages/tasks/index.tsx"));
 
+var login_1 = __importDefault(__webpack_require__(/*! ./pages/login */ "./resources/ts/pages/login/index.tsx"));
+
+var help_1 = __importDefault(__webpack_require__(/*! ./pages/help */ "./resources/ts/pages/help/index.tsx"));
+
 var Router = function Router() {
-  return react_1["default"].createElement(react_router_dom_1.BrowserRouter, null, react_1["default"].createElement("div", null, react_1["default"].createElement("nav", null, react_1["default"].createElement("ul", null, react_1["default"].createElement("li", null, react_1["default"].createElement(react_router_dom_1.Link, {
+  return react_1["default"].createElement(react_router_dom_1.BrowserRouter, null, react_1["default"].createElement("header", {
+    className: "global-head"
+  }, react_1["default"].createElement("ul", null, react_1["default"].createElement("li", null, react_1["default"].createElement(react_router_dom_1.Link, {
     to: "/"
-  }, "Home")), react_1["default"].createElement("li", null, react_1["default"].createElement(react_router_dom_1.Link, {
-    to: "/about"
-  }, "About")), react_1["default"].createElement("li", null, react_1["default"].createElement(react_router_dom_1.Link, {
-    to: "/users"
-  }, "Users")))), react_1["default"].createElement(react_router_dom_1.Switch, null, react_1["default"].createElement(react_router_dom_1.Route, {
-    path: "/about"
-  }, react_1["default"].createElement(About, null)), react_1["default"].createElement(react_router_dom_1.Route, {
-    path: "/users"
-  }, react_1["default"].createElement(Users, null)), react_1["default"].createElement(react_router_dom_1.Route, {
+  }, "\u30DB\u30FC\u30E0")), react_1["default"].createElement("li", null, react_1["default"].createElement(react_router_dom_1.Link, {
+    to: "/help"
+  }, "\u30D8\u30EB\u30D7")), react_1["default"].createElement("li", null, react_1["default"].createElement(react_router_dom_1.Link, {
+    to: "/login"
+  }, "\u30ED\u30B0\u30A4\u30F3")), react_1["default"].createElement("li", null, react_1["default"].createElement("span", null, "\u30ED\u30B0\u30A2\u30A6\u30C8")))), react_1["default"].createElement(react_router_dom_1.Switch, null, react_1["default"].createElement(react_router_dom_1.Route, {
+    path: "/help"
+  }, react_1["default"].createElement(help_1["default"], null)), react_1["default"].createElement(react_router_dom_1.Route, {
+    path: "/login"
+  }, react_1["default"].createElement(login_1["default"], null)), react_1["default"].createElement(react_router_dom_1.Route, {
     path: "/"
-  }, react_1["default"].createElement(tasks_1["default"], null)))));
+  }, react_1["default"].createElement(tasks_1["default"], null))));
 };
 
 function Home() {
