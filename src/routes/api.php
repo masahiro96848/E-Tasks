@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('tasks', 'TaskController');
+Route::patch('tasks/update-done/{task}', 'TaskController@updateDone');
