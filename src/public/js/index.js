@@ -2108,7 +2108,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.getTasks = void 0;
+exports.updateDoneTask = exports.getTasks = void 0;
 
 var axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/axios/index.js"));
 
@@ -2138,6 +2138,37 @@ var getTasks = function getTasks() {
 };
 
 exports.getTasks = getTasks;
+
+var updateDoneTask = function updateDoneTask(_ref) {
+  var id = _ref.id,
+      is_done = _ref.is_done;
+  return __awaiter(void 0, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+    var _yield$axios_1$defaul2, data;
+
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return axios_1["default"].patch("api/tasks/update-done/".concat(id), {
+              is_done: !is_done
+            });
+
+          case 2:
+            _yield$axios_1$defaul2 = _context2.sent;
+            data = _yield$axios_1$defaul2.data;
+            return _context2.abrupt("return", data);
+
+          case 5:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+};
+
+exports.updateDoneTask = updateDoneTask;
 
 /***/ }),
 
@@ -2229,7 +2260,7 @@ var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, gene
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.useTasks = void 0;
+exports.useUpdateDoneTask = exports.useTasks = void 0;
 
 var api = __importStar(__webpack_require__(/*! ../api/TaskApi */ "./resources/ts/api/TaskApi.ts"));
 
@@ -2256,6 +2287,17 @@ var useTasks = function useTasks() {
 
 exports.useTasks = useTasks;
 
+var useUpdateDoneTask = function useUpdateDoneTask() {
+  var queryClient = (0, react_query_1.useQueryClient)();
+  return (0, react_query_1.useMutation)(api.updateDoneTask, {
+    onSuccess: function onSuccess() {
+      queryClient.invalidateQueries('tasks');
+    }
+  });
+};
+
+exports.useUpdateDoneTask = useUpdateDoneTask;
+
 /***/ }),
 
 /***/ "./resources/ts/App.tsx":
@@ -2281,10 +2323,10 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 
 var router_1 = __importDefault(__webpack_require__(/*! ./router */ "./resources/ts/router.tsx"));
 
-var react_query_2 = __webpack_require__(/*! react-query */ "./node_modules/react-query/es/index.js");
+var react_query_1 = __webpack_require__(/*! react-query */ "./node_modules/react-query/es/index.js");
 
 var App = function App() {
-  var queryClient = new react_query_2.QueryClient({
+  var queryClient = new react_query_1.QueryClient({
     defaultOptions: {
       queries: {
         retry: false
@@ -2294,7 +2336,7 @@ var App = function App() {
       }
     }
   });
-  return react_1["default"].createElement(react_query_2.QueryClientProvider, {
+  return react_1["default"].createElement(react_query_1.QueryClientProvider, {
     client: queryClient
   }, react_1["default"].createElement(router_1["default"], null));
 };
